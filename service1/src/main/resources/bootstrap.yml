@@ -1,0 +1,11 @@
+# 컨피그 서비스 설정
+spring:
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      url: http://localhost:8888
+      
+encript:
+  key: 0A9F9C41980A9F2B5423127084BE17905BF6F67FD2A5CA26EFAFA9AD76E66B53      

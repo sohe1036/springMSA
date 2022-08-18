@@ -1,0 +1,33 @@
+server:
+  port: 8021
+
+# 유레카, 컨피그, API 게이트웨이 등에서 기본적인 이름으로 불려질 수 있도록 반드시 설정해야함
+spring:
+  application:
+    name: service1
+  profiles:
+    active:
+      default
+ 
+ # 유레카 서비스를 받을 수 있도록 해당 서비스를 등록
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    registryFetchIntervalSeconds: 5
+    disable-delta: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+     web:
+       exposure:
+         include: "*"
+  
+
